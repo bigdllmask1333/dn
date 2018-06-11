@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>域名购买</title>
+    <link rel="stylesheet" href="__STATIC__/home/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/home/css/index.css" />
+</head>
+<body>
+<!--头部-->
+<header class="header">
+    <div class="header_content clearfix">
+        <div class="logo fl">
+            <h1><a href="{:url('Index/index')}" class="logo-bg">二零一八实业</a></h1>
+        </div>
+        <div class="service_tel fr">
+            <p class="tel_title">服务热线：</p>
+            <p class="tel_num"> 40066 16820</p>
+        </div>
+    </div>
+</header>
+<!--搜索区-->
+<div class="search_area">
+    <div class="search_content">
+        <div class="search_form">
+            <form class="clearfix" method="get" action="{:url('Index/index')}">
+                <div class="formDiv">
+                    <div class="inputDiv">
+                        <input placeholder="搜索您喜欢的域名，如huahua"  name="search" id="search" />
+                    </div>
+                    <div class="line"></div>
+                    <div class="selectDiv">
+                        <select name="suffix" id="suffix">
+                            <option>.com</option>
+                            <option>.cn</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btnDiv"><button>搜索</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--主体区-->
+<div class="main-wrap clearfix">
+    <!--左边部分-->
+    <div class="wrap_left">
+        <div class="left_content">
+            <div class="wrap_container">
+                <p class="title">推荐域名</p>
+                {volist name="recommendslist" id="vo"}
+                <div class="box domain_recommend">
+                    <p class="dom_name">{$vo.domain_name}</p>
+                    <div class="dom_content">
+                        <p class="dom_price">￥{$vo.dnprice|default="123.00"}</p>
+                        <p class="dom_reason">抢车位</p>
+                        <div class="clearfix"><a href="javascript:;" class="dom_btn fr">立即购买</a></div>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+    <!--中间部分-->
+    <div class="wrap_middle">
+        <div class="middle_content">
+            <h1>{$total}个域名正在出售中</h1>
+            <div class="tab_wrapper">
+                <ul class="tab_menu" id="nky">
+                    <li id="home"  class="active biaoji" ><a href="{:url('Index/index')}">全部域名</a></li>
+                    {volist name="dntype" id="vo"}
+                    <li id="ds{$vo.id}" class="biaoji"><a href="{:url('Index/index?typeid='.$vo.id)}">{$vo.title}</a></li>
+                    {/volist}
+                </ul>
+                <div class="tab_content">
+                    <div  class="table-responsive ">
+                        <table  cellspacing="10" cellpadding="10">
+                            <thead>
+                            <tr>
+                                <th >域名</th>
+                                <th >域名卖点</th>
+                                <th >价格</th>
+                                <th >注册商</th>
+                                <th >到期时间</th>
+                                <th >购买</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td >{$vo.domain_name}</td>
+                                <td >{$vo.description}</td>
+                                <td >￥{$vo.dnprice|default="123.00"}</td>
+                                <td >{$vo.service_provider}</td>
+                                <td >{$vo.expiry_time|date="Y-m-d",###}</td>
+                                {if condition="($vo.status == 1)"}
+                                <td >
+                                    <button class="dom_btn" >立即购买</button>
+                                </td>
+                                {else /}
+                                <td >
+                                    <button class="dom_btn disable_bg" disabled="disabled">已售罄</button>
+                                </td>
+                                {/if}
+                            </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="pagination">
+                    {$page}
+                    <!--<ul class="clearfix">-->
+                    <!--<li class="jump active"><a class="">1</a></li>-->
+                    <!--<li class="jump"><a >2</a></li>-->
+                    <!--<li class="jump"><a >3</a></li>-->
+                    <!--<li class="jump"><a >4</a></li>-->
+                    <!--<li class="jump"><a >...</a></li>-->
+                    <!--<li class="jump"><a>72</a></li>-->
+                    <!--<li class="jump"><a >下一页</a></li>-->
+                    <!--<li class="jump"><a >尾页</a></li>-->
+                    <!--<li class="jumpoint">跳转到</li>-->
+                    <!--<li class="jumpinp">-->
+                    <!--<input type="text"  />-->
+                    <!--</li>-->
+                    <!--<li class="jump"><a >GO</a></li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右边部分-->
+    <div class="wrap_right">
+        <div class="right_content ">
+            <div class="wrap_container">
+                <p class="title">热门广告</p>
+                {volist name="ad" id="vo"}
+                <div class="ad_box">
+                    <div>
+                        <a href="{$vo.url}" target="_blank"><img src="__ROOT__/{$vo.path}"  /></a>
+                    </div>
+                    <p class="img_title">
+                        {$vo.title}
+                    </p>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-body">
+            <div class="dialogue" id="dialogue">
+                <form action="{:url('Index/index')}" method="post">
+                    <div class="dialogue_box">
+                        <h1 class="dialogue_title"><img src="__STATIC__/home/images/logo2.png" alt="" /></h1>
+
+                        <input type="text" style="display:none;" value="www.baidu.com" name="dn">
+
+                        <div><label ><span>您的姓名</span><span>
+								<input type="text" name="buyer_name" placeholder="请输入您的姓名"/>
+							</span></label></div>
+
+                        <div><label style="position: relative;"><span>期望价格</span><span>
+								<input type="text" placeholder="您的期望价格" name="buyer_hopeprice"/>
+							</span><span class="dw">￥</span></label></div>
+
+                        <div><label ><span>联系方式</span><span>
+								<input type="text" placeholder="请输入您的联系方式" name="buyer_tel"/>
+							</span></label></div>
+
+                        <div><label ><span>购买需求</span><span>
+								<textarea class="height_input" type="text" name="instructions" placeholder="请输入您的需求"/></textarea>
+							</span></label></div>
+                    </div>
+                    <div class="dialogue_btn">
+                        <button type="submit" class="btn sure_btn pull-left" id="submitBtn">提交</button>
+                        <button type="button" class="btn cancel_btn pull-right" data-dismiss="modal">取消</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                信息
+            </div>
+            <div class="modal-body">
+                您的购买信息我们已收到，平台管家24小时内与您联系，请您保持手机畅通！
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-btn btn-primary " data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/home/js/jquery-3.2.1.min.js"></script>
+<script src="__STATIC__/home/dist/js/bootstrap.min.js"></script>
+<script src="__STATIC__/home/js/index.js"></script>
+<script>
+    /*js获取URL里面的参数赋值到搜索框*/
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    var search=getQueryString("search");
+    var suffix=getQueryString("suffix");
+
+    $("#suffix option").each(function(){
+        if($(this).text() == suffix){
+            $(this).attr("selected",true);
+        }
+    });
+    document.getElementById('search').value=search;
+
+    var pagenum = r = window.location.href;
+
+    var arr = pagenum.split('typeid/')[1].split('.html')[0];
+    var bbs='#ds'+arr;
+
+    $(function (){
+        //把之前已有的active去掉
+        $('.biaoji').removeClass('active');
+        //当前点击的li加上class
+        $(bbs).addClass("active");
+    })
+
+</script>
+</body>
+</html>

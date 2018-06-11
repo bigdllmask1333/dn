@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000000;
+        }
+        #img{
+            text-align:center;
+            margin-top: 260px;
+        }
+    </style>
+</head>
+<body>
+<div id="img">
+    <img src="http://www.idiotminds.com/img/coming_soon.png" alt="">
+</div>
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]); return null;
+    }
+
+    var test = window.location.host;
+    console.log(test);
+    // window.setTimeout("window.location='https://www.baidu.com/'",2000);
+</script>
+</body>
+</html>

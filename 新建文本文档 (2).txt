@@ -1,0 +1,13 @@
+1. 新增表  dn_cms_adtype
+
+2. 节点  新增广告分类       广告分类   cms/adtype/index
+
+3. 新增一个控制器  Adtype   新增一个模型  Adtype
+
+3. 更新广告表dn_cms_slider，加上一个字段分类字段   adtype
+ 
+4. 广告新增跟编辑都加上分类选择
+
+47.75.175.178
+
+root 81wd#1201818$1&1waj*

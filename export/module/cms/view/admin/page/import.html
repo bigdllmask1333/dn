@@ -1,0 +1,56 @@
+{extend name="$_admin_base_layout" /}
+
+{block name="content"}
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <a href="__STATIC__/newsource/ymmb.xlsx">表格模板点击这里下载</a>
+</div>
+
+<!--<div class="alert alert-info alert-dismissable">-->
+<!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
+<!--<h3 class="font-w300 push-15">新手指导</h3>-->
+<!--<p>相关参数设置，请在【系统】>【系统功能】>【系统设置】>【<a class="alert-link" href="{:url('admin/system/index', ['group' => 'cms'])}">门户</a>】中设置，或 <a class="alert-link" href="{:url('admin/system/index', ['group' => 'cms'])}">点此</a> 跳转。</p>-->
+<!--&lt;!&ndash;<p>先 <a class="alert-link" href="{:url('cms/column/add')}">创建栏目</a>，</p>&ndash;&gt;-->
+<!--</div>-->
+<div class="row">
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="block block-bordered">
+            <div class="block-header bg-gray-lighter">
+                <h3 class="block-title">表格导入</h3>
+            </div>
+            <div class="block-content">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4 col-lg-2">
+
+                            <div class="block-content block-content-full">
+                                <form id="upbs" action="{:url('cms/page/import')}" enctype="multipart/form-data" method="post" >
+
+                                    <div class="report-file">
+                                        <input tabindex="3" size="3" name="xlsxs" class="btn btn-info" type="file"  onchange="document.getElementById('textName').value=this.value">
+                                    </div>
+                                    <input type="text" id="textName" name="xlsxs"  style="display: none" />
+                                    <br>
+                                    <!--<button type="button" class="btn btn-danger" id="upb">上传</button>-->
+                                    <button type="submit" class="btn btn-danger">上传</button>
+
+                                </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="script"}
+<script src="__ADMIN_JS__/core/jquery.countTo.min.js"></script>
+<script>
+    jQuery(function () {
+        App.initHelpers(['appear-countTo']);
+    });
+</script>
+{/block}

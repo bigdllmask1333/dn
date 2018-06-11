@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>域名购买</title>
+    <meta name="description" content="二零一八域名销售">
+    <meta name="keywords" content="域名购买">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="Bookmark" href="__STATIC__/newsource/image/logo_title.png" />
+    <link rel="shortcut icon" href="__STATIC__/newsource/image/logo_title.png"  />
+    <link rel="stylesheet" href="__STATIC__/newsource/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__STATIC__/newsource/css/index.css" />
+</head>
+<body>
+<!--头部-->
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-7 col-sm-12 col-xs-12">
+                <div class="header_content">
+                    <div class="logo fl">
+                        <h1>
+                            <a href="{:url('Index/index')}"><img src="__STATIC__/newsource/image/logo.png" alt="二零一八实业"/></a>
+                        </h1>
+                    </div>
+                    <div class="divorce fl" ></div>
+                    <div class="logo_title fl">
+                        <p>域名交易平台</p>
+                        <p>www.201818.com</p>
+                    </div>
+                    <div class="service_tel fl">
+                        <p class="tel_title"><i></i><span>服务热线：</span></p>
+                        <p class="tel_num"> 40066 16820</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12">
+                <div class="search_area pull-right">
+                    <div class="search_content">
+                        <div class="search_form">
+                            <form class="clearfix">
+                                <div class="formDiv">
+                                    <div class="inputDiv">
+                                        <input placeholder="搜索您喜欢的域名，如huahua" autofocus="autofocus" name="search" id="search" />
+                                        <!--<div class="line"></div>-->
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="selectDiv">
+                                        <select>
+                                            <option>.com</option>
+                                            <option>.cn</option>
+                                        </select>
+                                    </div>
+                                    <div class="btnDiv"><button><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--小屏下的tab-->
+        <button type="button" class="menu_btn navbar-toggle collapsed visible-xs-block" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">切换</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+</header>
+
+<!--tab区-->
+<div class="nav-tab ">
+    <div class="container">
+        <div class="tab_wrapper">
+            <ul class="tab_menu"  id="nky">
+                <li class="active biaoji" ><a href="{:url('Index/index')}">首页</a></li>
+                {volist name="dntype" id="vo"}
+                    <li id="ds{$vo.id}" class="biaoji"><a href="{:url('Index/tp?typeid='.$vo.id)}">{$vo.title}</a></li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--banner-->
+<div class="banner" >
+    <div class="container">
+        <div class="banner_top">
+            <p><span>{$total}</span>个域名正在出售中 </p>
+            <!--<p>新进展！ICANN计划推进单字母O.com域名拍卖 </p>-->
+        </div>
+    </div>
+</div>
+<!--good choice-->
+<div class="domain_choice" >
+    <div class="container">
+        <div class="better_choice">
+            <div class="part_title clearfix">
+                <p class="pull-left">域名优选</p>
+                <span class="pull-right"><a href="bestDomain.html">更多></a></span>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_open">
+                        <a href="domain_info.html">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_close">
+                        <a href="javascript:;" disabled="disabled">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_open">
+                        <a href="domain_info.html">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display">
+                        <a href="domain_info.html">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_close">
+                        <a href="javascript:;" disabled="disabled">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_open">
+                        <a href="domain_info.html">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_open">
+                        <a href="domain_info.html">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="ym_display ym_open">
+                        <a href="domain_info.html">
+                            <div class="ym_content">
+                                <p class="ym_name">名称：201818.com</p>
+                                <div class="ym_price">
+                                    <p>卖点：经营，股票，投资</p>
+                                    <p>价格：<span>￥100000</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--快捷搜索-->
+<div class="quick_search" >
+    <div class="container">
+        <div class="search_fast">
+            <div class="fast_box clearfix">
+                <div class="col-md-3">
+                    <div class="search_title">
+                        <h2>域名快捷搜索</h2>
+                        <p>致力于打造专业的域名交易平台</p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="search_box">
+                        <form action="">
+                            <div>
+                                <p>域名关键字：</p>
+                                <input type="text" placeholder="输入关键字" />
+                            </div>
+                            <div style="vertical-align: bottom;position: relative;">
+                                <p>域名分类：</p>
+                                <div class="dropdown_select">
+                                    <div class="select_class" >所有分类</div>
+                                    <div class="select_box"  style="display: none;">
+                                        <ul>
+                                            <li>
+                                                <label>数字：</label>
+                                                <span>纯数字</span>
+                                                <span>单数字</span>
+                                                <span>纯数字</span>
+                                                <span>双数字</span>
+                                            </li>
+                                            <li>
+                                                <label>字母：</label>
+                                                <span>纯数字</span>
+                                                <span>单数字</span>
+                                                <span>纯数字</span>
+                                                <span>双数字</span>
+                                            </li>
+                                            <li>
+                                                <label>拼音：</label>
+                                                <span>纯数字</span>
+                                                <span>单数字</span>
+                                                <span>纯数字</span>
+                                                <span>双数字</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>域名后缀：</p>
+                                <select name="">
+                                    <option value="">所有后缀</option>
+                                </select>
+                            </div>
+                            <button class="search_btn" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>搜&nbsp;索</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--banner-->
+<div class="banner" >
+    <div class="container">
+        <div class="banner_middle">
+
+        </div>
+    </div>
+</div>
+<!--分类-->
+<div class="domain_class" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="ym_class">
+                    <div class="part_title clearfix">
+                        <p class="pull-left">4数字</p>
+                        <span class="pull-right"><a href="page1.html">更多></a></span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table-striped">
+                            <thead>
+                            <tr>
+                                <th>域名</th>
+                                <th>报价</th>
+                                <th>域名卖点</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+                <div class="ym_class">
+                    <div class="part_title clearfix">
+                        <p class="pull-left">5数字</p>
+                        <span class="pull-right"><a href="page2.html">更多></a></span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table-striped">
+                            <thead>
+                            <tr>
+                                <th>域名</th>
+                                <th>报价</th>
+                                <th>域名卖点</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+                <div class="ym_class">
+                    <div class="part_title clearfix">
+                        <p class="pull-left">6数字</p>
+                        <span class="pull-right"><a href="page1.html">更多></a></span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table-striped">
+                            <thead>
+                            <tr>
+                                <th>域名</th>
+                                <th>报价</th>
+                                <th>域名卖点</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+                <div class="ym_class">
+                    <div class="part_title clearfix">
+                        <p class="pull-left">字母</p>
+                        <span class="pull-right"><a href="page1.html">更多></a></span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table-striped">
+                            <thead>
+                            <tr>
+                                <th>域名</th>
+                                <th>报价</th>
+                                <th>域名卖点</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            <tr>
+                                <td><a href="domain_info.html">201818.com</a></td>
+                                <td>￥1023</td>
+                                <td>简便</td>
+                                <td><button class="buy_btn">购买</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--banner-->
+<div class="banner" >
+    <div class="container">
+        <div class="banner_bottom">
+
+        </div>
+    </div>
+</div>
+<!--footer-->
+<footer >
+    <div class="foot">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                    <!--<i class="icon_tel"></i>-->
+                    <div class="tel_list">
+                        <i class="foot_icon icon_tel pull-left"></i>
+                        <div class="pull-left">
+                            <h3>免费服务热线&邮箱：</h3>
+                            <ul >
+                                <li><span>集团总机:40066 16820</span> <span>邮箱:contact@201818.com</span></li>
+                                <li><span>售前咨询转分机:9001</span> <span>邮箱:9001@201818.com</span></li>
+                                <li><span>售后咨询转分机:9002</span> <span>邮箱:9002@201818.com</span></li>
+                                <li><span>媒体合作转分机:9008</span> <span>邮箱:9008@201818.com</span></li>
+                                <li><span>商务合作转分机:9009</span> <span>邮箱:9009@201818.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                    <div class="company_info clearfix">
+                        <div class=" col-lg-7 col-md-12 col-sm-6 col-xs-6">
+                            <!--<i class="icon_address"></i>-->
+                            <div class="address_info">
+                                <i class="foot_icon icon_address pull-left"></i>
+                                <div class="pull-left">
+                                    <h3>集团名称:</h3>
+                                    <p>安徽二零一八实业集团</p>
+                                    <h3>集团地址:</h3>
+                                    <p>安徽省合肥市政务区蔚蓝商务港D座17楼</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-9 col-sm-6 col-xs-6">
+                            <div class="pull-right">
+                                <div class="wx">
+                                    <img src="__STATIC__/newsource/image/wx.png" alt="" />
+                                    <p>关注微信</p>
+                                </div>
+                                <div class="qq">
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2220016820&site=qq&menu=yes"><img src="__STATIC__/newsource/image/qq.png" /></a>
+                                    <p>周一至周日<br />09:00-22:30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright visible-lg-block"><p>Copyright 2017 © 安徽二零一八实业集团 All Rights Reserved 皖ICP备17028567号-1</p></div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12"><div class="copyright hidden-lg"><p>Copyright 2017 © 安徽二零一八实业集团 All Rights Reserved 皖ICP备17028567号-1</p></div></div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!--模态框-->
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-body">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!--<h4 class="modal-title">Modal title</h4>-->
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <h5><strong>购买域名：</strong><span >201818.com</span></h5>
+                        <div class="dialogue_box">
+                            <!--<input type="text" name="" id="domain" value="" />-->
+                            <div>
+                                <label ><span><i>*</i>您的姓名：</span><span><input type="text" class="name" name="name" placeholder="请输入您的姓名"/></span></label>
+                                <p class="tip-error"></p>
+                            </div>
+                            <div>
+                                <label style="position: relative;"><span><i>*</i>期望价格：</span><span><input type="text" class="price" name="price" placeholder="请填写合理价格"/></span><span class="dw">元</span></label>
+                                <p class="tip-error"></p>
+                            </div>
+                            <div>
+                                <label ><span><i>*</i>联系方式：</span><span><input type="text" name="contact" class="contact" placeholder="请输入您的联系方式或者QQ号"/></span></label>
+                                <p class="tip-error"></p>
+                            </div>
+                            <div class="height_input">
+                                <label ><span> &nbsp;购买需求：</span><span><textarea  type="text" placeholder="请输入您的需求"/></textarea></span></label>
+                                <p class="tip-error"></p>
+                            </div>
+                        </div>
+                        <div class="text-center"><input class="submitbtn" id="submitBtn" type="button" name="" id="" value="提交" /></div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                信息
+            </div>
+            <div class="modal-body">
+                您的购买信息我们已收到，平台管家24小时内与您联系，请您保持手机畅通！
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-btn btn-primary " data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/newsource/js/jquery-3.2.1.min.js"></script>
+<script src="__STATIC__/newsource/bootstrap/js/bootstrap.min.js"></script>
+<script src="__STATIC__/newsource/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__STATIC__/newsource/js/index.js"></script>
+
+<script type="text/javascript">
+    window.addEventListener('resize',reSize);
+    var myarr = $(".tab_menu li");
+    var tabLi = $(".tab_menu").find("li");
+    function reSize(){
+        if($(window).width()>=768){
+            var $liWidth = $(".tab_menu").width()/myarr.length;
+            $(".tab_menu li").css({"width": $liWidth,"min-width":"70px"});
+            $(".tab_menu").css({"width":"100%"});
+        }
+        else{
+            $(".tab_menu").css({"width":"300px"})
+            $(".menu_btn").click(function(){
+                $(".tab_menu").stop().animate({"right":"0"});
+                $(this).animate({"right":"-40px"})
+            });
+            $(".tab_menu li").click(function(){
+                $(this).parent(".tab_menu").stop().animate({"right":"-800px"});
+                $(".menu_btn").stop().animate({"right":"10px"});
+            });
+        }
+
+
+
+        // $(".tab_menu li").on('click',function(){
+        //     $(this).addClass('active').siblings('li').removeClass('active');
+        //     $('.jump_class span').html($(this).text())
+        // })
+
+    }
+    reSize();
+
+
+</script>
+<script>
+    /*wuweixiang 2018-05-15 编辑 功能：辅助搜索功能，拿取url的对应的搜索参数赋值到搜索框*/
+    /*js获取URL里面的参数赋值到搜索框*/
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    var search=getQueryString("search");
+    var suffix=getQueryString("suffix");
+
+    $("#suffix option").each(function(){
+        if($(this).text() == suffix){
+            $(this).attr("selected",true);
+        }
+    });
+    document.getElementById('search').value=search;
+
+    var pagenum = r = window.location.href;
+
+    var arr = pagenum.split('typeid/')[1].split('.html')[0];
+    var bbs='#ds'+arr;
+
+    $(function (){
+        //把之前已有的active去掉
+        $('.biaoji').removeClass('active');
+        //当前点击的li加上class
+        $(bbs).addClass("active");
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>域名购买</title>
+	<meta name="description" content="二零一八域名销售">
+	<meta name="keywords" content="域名购买">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="Bookmark" href="__STATIC__/home/images/logo_title.png" />
+	<link rel="shortcut icon" href="__STATIC__/home/images/logo_title.png"  />
+	<link rel="stylesheet" href="__STATIC__/home/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__STATIC__/home/css/index.css" />
+	<style type="text/css">
+		h6{color:blue;}
+		textarea{resize:none;}
+		#word{color:red;}
+		.pagination li a {
+			color: #000000;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--头部-->
+<header class="header">
+	<div class="header_content clearfix">
+		<div class="logo fl">
+			<h1>
+				<a href="{:url('Index/index')}" class="logo-bg">二零一八实业</a>
+			</h1>
+		</div>
+		<div class="service_tel fr">
+			<p class="tel_title">服务热线：</p>
+			<p class="tel_num"> 40066 16820</p>
+		</div>
+	</div>
+</header>
+<!--搜索区-->
+<div class="search_area">
+	<div class="search_content">
+		<div class="search_form">
+			<form class="clearfix" method="get" action="{:url('Index/index')}">
+				<div class="formDiv">
+					<div class="inputDiv">
+						<input placeholder="搜索您喜欢的域名，如huahua"   name="search" id="search"/>
+						<!--<div class="line"></div>-->
+					</div>
+					<div class="line"></div>
+					<div class="selectDiv">
+						<select name="suffix" id="suffix">
+							<option>.com</option>
+							<option>.cn</option>
+						</select>
+					</div>
+				</div>
+				<div class="btnDiv"><button>搜索</button></div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--主体区-->
+<div class="main-wrap clearfix">
+	<!--左边部分-->
+	<div class="wrap_left">
+		<div class="left_content">
+			<div class="wrap_container">
+				<p class="title">推荐域名</p>
+				{volist name="recommendslist" id="vo"}
+				<div class="box domain_recommend">
+					<p class="dom_name">{$vo.domain_name}</p>
+					<div class="dom_content">
+						<p class="dom_price">￥{$vo.dnprice|default="123.00"}</p>
+						<p class="dom_reason">抢车位</p>
+						<div class="clearfix"><a href="javascript:;" class="dom_btns fr recommend">立即购买</a></div>
+					</div>
+				</div>
+				{/volist}
+			</div>
+		</div>
+	</div>
+	<!--中间部分-->
+	<div class="wrap_middle">
+		<div class="middle_content">
+			<h2><span>{$total}</span>个域名正在出售中</h2>
+			<div class="tab_wrapper">
+				<ul class="tab_menu" id="nky">
+					<li id="home"  class="active biaoji" ><a href="{:url('Index/index')}">全部域名</a></li>
+					{volist name="dntype" id="vo"}
+						<li id="ds{$vo.id}" class="biaoji"><a href="{:url('Index/index?typeid='.$vo.id)}">{$vo.title}</a></li>
+					{/volist}
+				</ul>
+
+				<div class="tab_content">
+					<div  class="table-responsive ">
+						<table  cellspacing="10" cellpadding="10">
+							<thead>
+							<tr>
+								<th >域名</th>
+								<th >域名卖点</th>
+								<th >价格</th>
+								<th >注册商</th>
+								<th >到期时间</th>
+								<th >购买</th>
+							</tr>
+							</thead>
+							<tbody>
+							{volist name="list" id="vo"}
+							<tr>
+								<td >{$vo.domain_name}</td>
+								<td >{$vo.description}</td>
+								<td >￥{$vo.dnprice|default="123.00"}</td>
+								<td >{$vo.service_provider}</td>
+								<td >{$vo.expiry_time|date="Y-m-d",###}</td>
+								{if condition="($vo.status == 1)"}
+								<td >
+									<button class="dom_btn" >立即购买</button>
+								</td>
+								{else /}
+								<td >
+									<button class="dom_btn disable_bg" disabled="disabled">已售罄</button>
+								</td>
+								{/if}
+							</tr>
+							{/volist}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="pagination">
+					{$page}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--右边部分-->
+	<div class="wrap_right">
+		<div class="right_content ">
+			<div class="wrap_container">
+				<p class="title">热门广告</p>
+				{volist name="ad" id="vo"}
+				<div class="ad_box">
+					<div>
+						<a href="{$vo.urls}" target="_blank"><img src="__ROOT__/{$vo.path}"  /></a>
+					</div>
+					<p class="img_title">
+						{$vo.title}
+					</p>
+				</div>
+				{/volist}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-body">
+			<div class="dialogue" id="dialogue">
+				<form action="{:url('Index/index')}" method="post" id="form1">
+					<div class="dialogue_box">
+						<h2 class="dialogue_title"><img src="__STATIC__/home/images/logo2.png" alt="" /></h2>
+						<input type="text"  id="domain"   name="dn"/>
+						<!--<input type="text" style="display:none;" value="www.baidu.com" name="dn">-->
+						<div>
+							<label >
+								<span>您的姓名</span>
+								<span>
+										<input type="text" placeholder="请输入您的姓名" id="buyer_name"  name="buyer_name" maxlength="6"/>
+									</span>
+							</label>
+						</div>
+						<div>
+							<label style="position: relative;">
+								<span>期望价格</span>
+								<span>
+										<input type="number" placeholder="您的期望价格" id="buyer_hopeprice" maxlength="10" name="buyer_hopeprice"/>
+									</span>
+								<span class="dw">￥</span>
+							</label>
+						</div>
+						<div>
+							<label >
+								<span>联系方式</span>
+								<span>
+										<input type="number" placeholder="请输入手机或者QQ" id="buyer_tel" name="buyer_tel"  maxlength="15"/>
+								</span>
+							</label>
+						</div>
+						<div>
+							<label >
+								<span>购买需求</span>
+								<span>
+										<textarea class="height_input" id="area"  type="text" placeholder="请输入您的需求" name="instructions"/></textarea>
+										<h6>你可以输入<span>50</span>个字，现在剩余<span id="words1">50</span>个</h6>
+								</span>
+							</label>
+						</div>
+					</div>
+					<div class="dialogue_btn clearfix">
+						<button type="button" class="btn sure_btn pull-left" id="submitBtn">提交</button>
+						<button type="button" class="btn cancel_btn pull-right" data-dismiss="modal">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				信息
+			</div>
+			<div class="modal-body">
+				您的购买信息我们已收到，平台管家24小时内与您联系，请您保持手机畅通！
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="modal-btn btn-primary " data-dismiss="modal">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="__STATIC__/home/js/jquery-3.2.1.min.js"></script>
+<script src="__STATIC__/home/dist/js/bootstrap.min.js"></script>
+<script src="__STATIC__/home/js/index.js"></script>
+<script src="__STATIC__/home/layer/layer.js"></script>
+
+<script type="text/javascript">
+
+    window.addEventListener('resize',reSize);
+    var myarr = $(".tab_menu li");
+    function reSize(){
+        if($(window).width()>=768){
+            var $liWidth = $(".tab_menu").width()/myarr.length;
+            $(".tab_menu li").css({"width": $liWidth,"min-width":"70px"});
+            $(".tab_menu").css({"width":"100%"});
+        }else{
+            $(".tab_menu").css({"width":"300px"})
+            $(".menu_btn").click(function(){
+                $(".tab_menu").stop().animate({"right":"0"});
+                $(this).animate({"right":"-40px"})
+            });
+            $(".tab_menu li").click(function(){
+                $(this).parent(".tab_menu").stop().animate({"right":"-300px"});
+                $(".menu_btn").stop().animate({"right":"10px"});
+            });
+        }
+    }
+    reSize();
+    $('.pagination .jump').click(function(){
+        $(this).addClass('active').siblings().removeClass("active");
+    });
+
+    $(".tab_menu li").eq(0).addClass("active");
+
+
+    $(".recommend").on('click', function() {
+        $("#submitModal").modal("toggle");
+        $("#domain").attr("value",$(this).parent().parent().parent().children().first().text());
+    });
+
+
+
+
+    /*wuweixiang 2018-05-15 编辑 功能：辅助搜索功能，拿取url的对应的搜索参数赋值到搜索框*/
+    /*js获取URL里面的参数赋值到搜索框*/
+    function getQueryString(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        }
+        return null;
+    }
+
+    var search=getQueryString("search");
+    var suffix=getQueryString("suffix");
+
+    $("#suffix option").each(function(){
+        if($(this).text() == suffix){
+            $(this).attr("selected",true);
+        }
+    });
+    document.getElementById('search').value=search;
+
+    var pagenum = r = window.location.href;
+
+    var arr = pagenum.split('typeid/')[1].split('.html')[0];
+    var bbs='#ds'+arr;
+
+    $(function (){
+        //把之前已有的active去掉
+        $('.biaoji').removeClass('active');
+        //当前点击的li加上class
+        $(bbs).addClass("active");
+    })
+</script>
+<script type="text/javascript">
+    $(function(){
+        $("#area").keyup(function(){
+            var len = $(this).val().length;
+            if(len > 49){
+                $(this).val($(this).val().substring(0,50));
+            }
+            var num = 50 - len;
+            if(num<=0){num=0}
+            $("#words1").text(num);
+        });
+    });
+
+
+
+    $(function(){
+        //按钮单击时执行
+        $("#submitBtn").click(function(){
+            layer.msg('玩命提示中');
+            //Ajax调用处理
+            var domain = $('#domain').val();
+            var buyer_name = $('#buyer_name').val();
+            var buyer_hopeprice = $('#buyer_hopeprice').val();
+            var buyer_tel = $('#buyer_tel').val();
+            var area = $('#area').val();
+
+            if(buyer_name==''){
+                layer.msg('姓名不能为空', function(){});
+                return;
+			}
+            if(buyer_hopeprice==''){
+                layer.msg('期望价格不能为空', function(){});
+                return;
+            }
+            if(buyer_tel==''){
+                layer.msg('联系方式不能为空', function(){});
+                return;
+            }
+            if(area==''){
+                layer.msg('购买说明不能为空', function(){});
+                return;
+            }
+
+            var data={"domain_name":domain,"buyer_name":buyer_name,"buyer_hopeprice":buyer_hopeprice,"buyer_tel":buyer_tel,"instructions":area};
+			console.log(data);
+
+            $.ajax({
+                type: "POST",
+                url: "{:url('index/addmassage')}",
+                data: {"data":data},
+                dataType:"json",
+                async:false,
+                cache:false,
+                success: function(data){
+                    if(data.success=="true"){
+                        layer.alert(data.msg, {
+                            title:'提示',
+                            icon: 1,
+                            skin: 'layer-ext-moon' ,
+                            yes: function(index, layero){
+                                location.reload();
+                            }
+                        })
+                    }else if(data.success=="false") {
+                        layer.alert(data.msg, {
+                            title:'提示',
+                            icon: 2,
+                            skin: 'layer-ext-moon'
+                        })
+                    }
+                },
+                error: function(json){
+                    layer.msg('删除异常');
+                }
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

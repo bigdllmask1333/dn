@@ -1,0 +1,107 @@
+{extend name="layout" /}
+
+{block name="page-header"}{/block}
+
+{block name="content"}
+    <!--快捷操作START-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block block-bordered">
+                <div class="block-header bg-gray-lighter">
+                    <h3 class="block-title">快捷操作</h3>
+                </div>
+                <div class="block-content">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <a class="block block-link-hover3 text-center" href="{:url('cms/page/index')}">
+                                <div class="block-content block-content-full">
+                                    <i class="fa fa-photo fa-3x text-muted"></i>
+                                    <div class="font-w600 push-15-t">域名列表</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <a class="block block-link-hover3 text-center" href="{:url('cms/page/add')}">
+                                <div class="block-content block-content-full">
+                                    <i class="fa fa-plus fa-3x text-muted"></i>
+                                    <div class="font-w600 push-15-t">发布域名</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <a class="block block-link-hover3 text-center" href="{:url('cms/slider/index')}">
+                                <div class="block-content block-content-full">
+                                    <i class="fa fa-handshake-o fa-3x text-muted"></i>
+                                    <div class="font-w600 push-15-t">广告管理</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <a class="block block-link-hover3 text-center" href="{:url('cms/dntype/index')}">
+                                <div class="block-content block-content-full">
+                                    <i class="fa fa-map-signs fa-3x text-muted"></i>
+                                    <div class="font-w600 push-15-t">导航管理</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <a class="block block-link-hover3 text-center" href="{:url('cms/massage/index')}">
+                                <div class="block-content block-content-full">
+                                    <i class="fa fa-commenting fa-3x text-muted"></i>
+                                    <div class="font-w600 push-15-t">用户留言</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-2">
+                            <a class="block block-link-hover3 text-center" href="{:url('cms/link/index')}">
+                                <div class="block-content block-content-full">
+                                    <i class="fa fa-link fa-3x text-muted"></i>
+                                    <div class="font-w600 push-15-t">友情链接</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--快捷操作END-->
+
+
+
+
+    {notempty name="default_pass"}
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <!--<h3 class="font-w300 push-15">爱代码、爱学习、爱生活！</h3>-->
+        <!--<h3 class="font-w300 push-15">悄悄告诉刘大老板：搜索功能做好了。。。</h3>-->
+        <!--<p>域名列表： <a class="alert-link link-effect" href="{:url('cms/page/index')}">点击前往</a>。</p>-->
+        <!--<a href="http://cssnb.com/出租房源上传模板.xlsx">表格模板点击这里下载</a>-->
+        <a href="__STATIC__/newsource/ymmb.xlsx">导入域名表格模板点击这里下载</a>
+        <p>【备注】: 域名类型栏目填写的数字不清楚可以参考 <a class="alert-link" href="{:url('admin/dntype/index')}">域名类型</a> 的ID 所对应的数字。</p>
+    </div>
+    {/notempty}
+    {// 后台首页钩子}
+    <div class="row">
+        {:hook('admin_index')}
+    </div>
+
+
+
+
+
+{/block}
+
+{block name="script"}
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '{:url("checkUpdate")}',
+            type: 'GET'
+        }).done(function(data) {
+            $('#product-auth').html(data.auth);
+            $('#product-update').html($('#product-update').text() + ' ' + data.update);
+        });
+    });
+</script>
+{/block}
