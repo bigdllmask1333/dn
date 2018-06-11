@@ -1,0 +1,634 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Microsoft YaHei";
+}
+body{background: url(../images/background.png);/*min-width:1200px*/padding: 0 !important;}
+a{text-decoration: none;}
+a:hover,a:focus,a:visited{text-decoration: none;}
+img{
+    border: none;
+    vertical-align: top;
+}
+p{
+    margin: 0;
+}
+h1{
+    margin: 0
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:after{
+    display: block;
+    content: "";
+    clear: both;
+}
+@media (min-width: 1200px)
+    .container {
+        width: 1200px;
+        padding: 0;
+    }
+    header{
+        /*height: 100px;*/
+        padding-top: 15px;
+        /*background:#fff;*/
+    }
+    .header_content{
+        width: 67%;
+        margin: auto;
+    }
+    .logo h1{
+        margin: 0;
+    }
+    .logo-bg{
+        font-size: 30px;
+        display: block;
+        /*margin-left: 22px;*/
+        padding-top: 58px;
+        width: 254px;
+        height: 0;
+        overflow: hidden;
+        text-indent: -9999px;
+        background: url(../images/logo.png) 0 0 no-repeat;
+    }
+    .service_tel{
+        float: right;
+
+    }
+    .service_tel .tel_title{
+        font-size: 20px;
+        color: #fff;
+    }
+    .service_tel .tel_num{
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .search_area{
+        padding: 20px;
+        background: #0075A9;
+    }
+    .search_content{
+        width: 100%;
+    }
+    .border_span{
+        border:1px solid #B5B5B5;
+        display: inline-block;
+        border-right: none;
+    }
+    .input_wraper input{
+        font-size: 18px;
+        width: 850px;
+        line-height: 2.222;
+        text-align: justifyLeft;
+        border: none;
+        height: 58px;
+        outline: none;
+        padding-left: 18px;
+        box-sizing: border-box;
+    }
+    .select_wraper select{
+        font-size: 18px;
+        line-height: 2.222;
+        text-align: center;
+        color: #333;
+        padding: 18px;
+        padding-left: 30px;
+        width: 147px;
+        border: none;
+        outline: none;
+        border-left: 1px solid #B5B5B5;
+    }
+    .btn_wraper button{
+        font-size: 18px;
+        color: rgb(254, 254, 254);
+        text-align: center;
+        width: 200px;
+        background: #01A1DC;
+        border: none;
+        outline: none;
+        height: 60px;
+    }
+    .search_form {
+        /*width: 1200px;*/
+        width: 67%;
+        margin: 0 auto;
+        overflow: hidden;
+        /*background: #fff;*/
+    }
+    .search_form div {
+        float: left;
+        background: #FFFFFF;
+    }
+    .search_form .formDiv{
+        border: 1px solid #eee;
+        width: 84%;
+    }
+    .btnDiv{
+        width: 16%;
+    }
+    .search_form .inputDiv{
+        width: 85%;
+    }
+    .selectDiv{
+        width: 14%;
+    }
+    .search_form input {
+        outline: none;
+        padding:1px;
+        padding-left: 18px;
+        height: 58px;
+        border: none;
+        /*width: 850px;*/
+        width: 100%;
+        font-size: 18px;
+        line-height: 2.222;
+        box-sizing: border-box;
+    }
+
+    .search_form select {
+        height: 58px;
+        border: none;
+        width: 100%;
+        outline: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: url(../images/arrow.png) no-repeat scroll right center #FFFFFF;
+        padding-right: 14px;
+        font-size: 18px;
+        line-height: 2.222;
+        text-align: center;
+        color: #333;
+        padding-left: 30px;
+        cursor: pointer;
+    }
+    .search_form .line {
+        background: #CCCCCC !important;
+        height: 44px;
+        color: #CCCCCC;
+        width: 1px;
+        margin: 7px 0;
+    }
+    .search_form button {
+        font-size: 18px;
+        color: rgb(254, 254, 254);
+        text-align: center;
+        width: 100%;
+        background: #01A1DC;
+        border: none;
+        outline: none;
+        height: 60px;
+        cursor: pointer;
+    }
+    .main-wrap{
+        width:100%;
+    }
+    .main-wrap .wrap_left{
+        float: left;
+    }
+    .main-wrap .wrap_left,.main-wrap .wrap_right{
+        height: 100%;
+        width: 17%;
+        padding-top: 40px;
+    }
+    .wrap_container{
+        width:90%;
+        margin: auto;
+    }
+    .wrap_left .dom_btn:hover,.wrap_left .dom_btn:focus{
+        color: #ffff00;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .wrap_left .dom_btns:hover,.wrap_left .dom_btns:focus{
+        color: #ffff00;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .main-wrap .wrap_left .left_content{
+        width: 100%;
+    }
+    .domain_recommend{
+        border: 1px solid #0075A9;
+        margin: auto;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .dom_name{
+        font-size: 24px;
+        color: #fff;
+        line-height: 2.5;
+        background: #0075A9;
+        padding-left: 18px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .dom_price{
+        font-size: 30px;
+        color: #ffff00;
+    }
+    .dom_reason{
+        color: #777;
+        font-size: 24px;
+        margin-top: 18px;
+        margin-bottom: 30px;
+    }
+    .title{
+        color: #fff;
+        font-size: 30px;
+        margin: auto;
+    }
+    .dom_btn{
+        font-size: 16px;
+        color: #ffff00;
+        border: 1px solid #ffff00;
+        border-radius: 5px;
+        width: 133px;
+        height: 43px;
+        display: block;
+        line-height: 2.5;
+        text-align: center;
+    }
+
+    .dom_btns{
+        font-size: 16px;
+        color: #ffff00;
+        border: 1px solid #ffff00;
+        border-radius: 5px;
+        width: 133px;
+        height: 43px;
+        display: block;
+        line-height: 2.5;
+        text-align: center;
+    }
+
+    .dom_content{
+        padding:  18px ;
+    }
+    .main-wrap .wrap_middle{
+        float: left;
+        height: 100%;
+        width: 66%;
+        padding-top: 40px;
+    }
+    .middle_content h2{
+        font-size: 60px;
+        color: #0075A9;
+        text-align: center;
+        margin:0 0 50px;
+        font-weight: normal;
+    }
+    .table-responsive{
+        overflow: hidden;
+    }
+    .tab_wrapper{
+        position: relative;
+    }
+    .tab_menu{
+        font-size: 0;
+    }
+    .tab_menu a{
+        color: #fff;
+        padding: 20px 0;
+        display: block;
+    }
+    .tab_wrapper .tab_menu li{
+        position: relative;
+        text-align: center;
+        background-color: #01A1DC;
+        color: #fff;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 0;
+        font-size: 16px;
+        /*width: 16.66%;*/
+        box-sizing: border-box;
+    }
+    .tab_wrapper .tab_menu li.active{
+        background: #fff;
+    }
+    .tab_wrapper .tab_menu li.active a{
+
+        color: #01A1DC;
+    }
+
+
+    .tab_content table{
+        width: 100%;
+    }
+    .tab_content table  tr{
+        width: 100%;
+        display: table;
+        margin-bottom: 10px;
+    }
+    .tab_content table td{
+        height: 79px;
+        padding: 20px 0 ;
+    }
+
+    .tab_content thead th{
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+        font-weight: normal;
+        height: 60px;
+        padding: 20px 0 ;
+    }
+    .tab_content tbody tr:hover td{
+        background: #4e4e38;
+    }
+    .tab_content tbody td{
+        text-align: center;
+        background: black;
+    }
+    .tab_content table tr td:first-child{
+        font-size: 20px;
+        color: #01A1DC;
+        line-height: 2.5;
+    }
+    .tab_content table tr th:first-child,.tab_content table tr td:first-child,.tab_content table tr td:nth-child(2),.tab_content table tr th:nth-child(2),.tab_content table tr td:nth-child(5),.tab_content table tr th:nth-child(5),.tab_content table tr td:nth-child(6),.tab_content table tr th:nth-child(6){
+        width: 16.6%;
+    }
+
+    .tab_content table tr td:nth-child(3),.tab_content table tr th:nth-child(3){
+        width: 8.4%;
+    }
+    .tab_content table tr td:nth-child(4),.tab_content table tr th:nth-child(4){
+        width: 25%;
+    }
+    .tab_content table tr td:nth-child(2){
+        font-size: 16px;
+        color: #fff;
+        line-height: 2.5;
+    }
+    .tab_content table tr td:nth-child(3){
+        font-size: 16px;
+        color: #ffff00;
+        line-height: 2.5;
+    }
+    .tab_content table tr td:nth-child(4),.tab_content table tr td:nth-child(5){
+        font-size: 16px;
+        color: #fff;padding: 10px 0;
+        line-height: 1.5;
+    }
+    .tab_content table tr button{
+        color: #333;;
+        background: #ffff00;
+        border-radius: 5px;
+        display: block;
+        width: 135px;
+        height: 45px;
+        line-height: 45px;
+        margin: auto;
+        cursor: pointer;
+    }
+    .tab_content .disable_bg{
+        background: #B5B5B5 !important;
+        color: #000000 !important;
+        cursor: no-drop;
+        border-color:#B5B5B5;
+    }
+    .pagination{
+        width: 100%;text-align: center;height: 76px;
+    }
+    .pagination ul{
+        position: absolute;
+        left: 50%;width: 560px;
+        /*margin-left: -280px;*/
+        font-size: 0;
+        transform: translateX(-50%);
+    }
+    .pagination li{
+        display: inline-block;
+        margin-right: 10px;margin-bottom: 8px;
+        color:#fff;font-size: 14px;
+    }
+    .pagination li a{
+        color: #fff;
+        cursor: pointer;
+    }
+    .pagination .jump{
+        border: 1px solid #0075A9;
+        padding:7px 10px;
+    }
+    .pagination .jump:hover{
+        background: #FFFF00;
+    }
+    .pagination .jump:hover a{
+        color: #333;
+    }
+    .jumpoint{
+        padding:7px 10px;
+    }
+    .pagination .jumpinp input{
+        border: 1px solid #0075A9;
+        width: 38px;
+        height: 35px;
+        background: none;text-align: center;
+    }
+    .pagination  .active{
+        background: #ffff00 !important;
+        color: #333 !important;
+    }
+    .pagination  .active>a{
+        color: #333;
+    }
+    .main-wrap .wrap_right{
+        float: right;
+    }
+    .ad_box{
+        border: 1px solid #0075A9;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .ad_box img{
+        width: 100%;
+    }
+    .img_title{
+        font-size: 16px;
+        color: #0075A9;
+        text-align: center;
+        height: 55px;
+        line-height: 55px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    #submitModal{text-align:center;}
+    #submitModal .modal-dialog{
+        display: inline-block;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+        width: 600px;
+        /*height: 600px;*/
+        vertical-align: middle;
+        /*position: absolute;
+        top: 50%;
+        margin-top: -300px;
+        left: 50%;
+        margin-left: -300px;*/
+    }
+    #submitModal .modal-body{
+        padding: 0;
+    }
+    .dialogue_box{
+        text-align: center;
+        line-height: 46px;
+    }
+    .dialogue_box .dw{
+        position: absolute;
+        top: 9px;
+    }
+    .dialogue_title{
+        text-align: center;
+        padding: 30px 0;
+        margin: 0;
+    }
+    .dialogue input{
+        width: 400px;
+        height: 50px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+        font-size: 17px;
+        padding-left: 10px;
+    }
+    .dialogue label{
+        font-size: 24px;
+        color: rgb(51, 51, 51);
+        font-weight: normal;
+    }
+    .dialogue .height_input{
+        max-height: 150px ;
+        min-height: 150px;
+        max-width: 400px;
+        min-width: 400px;
+        vertical-align: top;
+        margin-left: 25px;
+        font-size: 17px;
+        padding-left: 10px;
+    }
+    .dialogue .dialogue_btn{
+        margin-top: 33px;
+        border-top:1px solid #e6e6e6;
+    }
+    .dialogue .dialogue_btn .btn {
+        font-size: 24px;
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+        padding: 15px;
+        box-sizing: border-box;
+        background: #fff;
+        outline: none;
+    }
+    .dialogue .dialogue_btn .sure_btn{
+        color: #ff0000;
+        border-right: 1px solid #E6E6E6;
+    }
+
+    .dialogue .dialogue_btn .cancel_btn{
+        color: rgb(51, 51, 51);
+
+    }
+    .table-responsive{
+        border: none !important;
+    }
+
+    /*模态框*/
+    #successModal .modal-dialog{
+        width: 300px;
+        height: 160px;
+        position: absolute;
+        top: 50%;
+        margin-top: -80px;
+        left: 50%;
+        margin-left: -150px;
+    }
+
+    #successModal .modal-footer{
+        border-top: none;
+    }
+    #successModal .modal-footer .modal-btn{
+        border: none;
+        padding: 5px 6px;
+    }
+    /*选中样式*/
+    ::selection {
+        background:#ffff00;
+        color:#333;
+    }
+    ::-moz-selection {
+        background:#ffff00;
+        color:#333;
+    }
+    ::-webkit-selection {
+        background:#ffff00;
+        color:#333;
+    }
+    @media (min-width: 1200px){
+        .tab_wrapper .tab_menu li{display: inline-block !important;}
+        .menu_btn{display: none;}
+        .tab_wrapper .tab_menu{width: 100% !important;}
+    }
+    @media only screen and (min-width:785px) and (max-width:  1199px) {
+        .wrap_left,.wrap_right{display: none;}
+        .main-wrap  .wrap_middle{float: none !important;margin: 0 auto ;}
+        .tab_content table tr button{width: 100px;}
+        .main-wrap .wrap_middle{width: 768px;}
+        .middle_content h1{font-size:46px ;}
+        .tab_wrapper .tab_menu{width: 100% !important;}
+        .tab_wrapper .tab_menu li{display: inline-block !important;}
+        .menu_btn{display: none;}
+        .search_form{width: 768px;}
+        .search_form input{font-size: 14px;padding-left: 8px;}
+    }
+    @media only screen and (max-width:  784px) {
+        .middle_content h2{font-size:26px ;}
+        .wrap_left,.wrap_right{display: none;}
+        .main-wrap  .wrap_middle{float: none !important;margin: 0 auto ;}
+        .tab_content table tr button{width: 70px;font-size: 13px;}
+        .main-wrap .wrap_middle{width: 96%;}
+        .tab_content tr th:nth-child(2),.tab_content tr th:nth-child(4),.tab_content tr td:nth-child(2),.tab_content tr td:nth-child(4){display: none;}
+        .tab_content table tr td:nth-child(4), .tab_content table tr td:nth-child(5){font-size: 12px;}
+        .tab_content table tr td:first-child{font-size: 16px;}
+        .tab_menu{position: fixed;right:-300px;top: 20px;z-index: 200;width: 300px;}
+        .tab_wrapper .tab_menu li{width: 100%;display: block !important;width:300px !important;}
+        .menu_btn{display: block;width: 40px;height:30px;border: 0;background: #fff;border-radius: 4px;position: fixed;right: 10px;top: 50px;}
+        .menu_btn span{display: block;width: 25px;height: 1px;background: #01204E;margin: 5px auto;}
+        .search_area{padding: 20px 2%;}
+        .selectDiv{width: 60px;}
+        .search_form{width: 100%;}
+        .search_form select{padding: 8px;line-height:28px;font-size: 14px;width:60px ;background-size: 16px 8px;}
+        .search_form .inputDiv{width: calc( 100% - 61px);}
+        .search_form input{font-size: 14px;padding-left: 8px;}
+        .header_content {width: 96%;}
+        .middle_content h2{margin-bottom: 20px;}
+        .service_tel{float: none;width: 100%;}
+        .logo {float: none;}
+        .service_tel p{display: inline-block;font-size: 20px !important;padding: 5px 0;}
+        .pagination ul{width: 308px;}
+        .tab_content table tr button{height: 35px;line-height: 35px;}
+        .search_form input,.search_form select{height: 38px;line-height:22px;}
+        .search_form .line{height: 24px;}
+        .search_form button{height: 40px}
+        #submitModal div span{font-size: 14px;}
+        #submitModal div input{font-size: 14px;}
+        #submitModal .modal-dialog{width: 86%;}
+        #submitModal .modal-dialog input{width: 160px;margin-left: 10px;height: 30px;line-height: 30px;margin-bottom: 10px;}
+        #submitModal .modal-dialog textarea{max-width: 160px;min-width: 160px;max-height: 120px;min-height: 120px;margin-left: 10px;font-size: 14px;font-family: "微软雅黑";}
+        .dialogue .dialogue_btn .btn{padding:10px 10px;font-size: 16px;}
+        .dialogue .dialogue_btn{margin-top: 10px;}
+        .dialogue_box{line-height: 36px;}
+        .dialogue_box .dialogue_title{padding: 20px;}
+        .dialogue_box .dialogue_title img{height: 40px;}
+    }
+
+
